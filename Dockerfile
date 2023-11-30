@@ -23,4 +23,6 @@ EXPOSE 8000
 
 CMD php artisan serve --host=0.0.0.0 --port=8000
 
-
+# Install MySQL client and PDO MySQL extension
+RUN apt-get install -y default-mysql-client \
+    && docker-php-ext-install pdo_mysql
